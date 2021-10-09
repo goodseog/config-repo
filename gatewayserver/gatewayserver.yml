@@ -12,13 +12,6 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: review-service
-        uri: lb://reviewservice
-        order: 0
-        predicates:
-        - Path=products/{product-id}/reviews/**
-        filters:
-        - SetPath=/reviews/hello
       - id: product-service
         uri: lb://productservice
         order: 1
