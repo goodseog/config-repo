@@ -12,14 +12,14 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: product-server
-        uri: lb://productserver
+      - id: product-service
+        uri: lb://productservice
         predicates:
         - Path=/products/**
         filters:
         - RewritePath=/products/(?<path>.*), /$\{path}
-      - id: review-server
-        uri: lb://reviewserver
+      - id: review-service
+        uri: lb://reviewservice
         predicates:
         - Path=/reviews/**
         filters:
