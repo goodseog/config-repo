@@ -18,7 +18,7 @@ spring:
         predicates:
         - Path=products/{product-id}/reviews/**
         filters:
-        - RewritePath=products/(?<product-id>.*)/reviews/(?<review_id>.*), /reviews/hello
+        - SetPath=/reviews/hello
       - id: product-service
         uri: lb://productservice
         order: 1
